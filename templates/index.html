@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="10"> Refresh the page every 10 seconds -->
+    <title>Pie Chart</title>
+</head>
+
+<body>
+    <h1 align="center">logstash-2024/04/03</h1>
+    <h1 align="center">Possible IP Flooding Attack</h1>
+    <div style="text-align: center;">
+        <img src="{{ line }}" alt="Pie Chart" id="line_chart"> 
+        <img src="{{ bar }}" alt="Pie Chart" id="bar_chart">
+
+        <script>
+            function getchart(){ 
+            fetch('/getchart') 
+                .then(response => {
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    return response.json();
+                })
+                .then(data => {
+
+                    document.getElementById('line_chart').src=data.line_chart
+                    document.getElementById('bar_chart').src=data.bar_chart
+                    console.log(data); 
+
+                })
+                .catch(error => {
+
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+            }
+
+            // setInterval(getchart,60000)
+            setInterval(getchart,120000)
+        </script>
+    </div>
+
+</body>
+
+</html>
