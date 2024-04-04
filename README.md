@@ -11,7 +11,7 @@
 </ul>
 <h2 align="center">หน้า Website การแสดงผล</h2>
 <p align="center">
-        <img src="static/images/website.png" width="500">
+        <img src="static/images/website.png">
     </p>
 <h2 align="center">Command IP Flood</h2>
 <p align="center">
