@@ -16,6 +16,17 @@
 <h2 align="center">Command IP Flood</h1>
 ```
 {
-sudo hping3 -S --flood -p 1000 <IP Target>
+  "ESP8266": [
+    {
+      "Temp": 23.29999924,
+      "Humid": 95,
+      "HeatIndex": 24.17000008,
+      "PM25": 5.400000095,
+      "PM10": 8.699999809,
+      "Status": "Comfortable",
+      "timestamp": "23-12-2023 23:49:19",
+      "id": 1
+    }
 }
+```
 ```
