@@ -9,10 +9,11 @@
     <li>64111412 - เมธานุสรณ์ สุทธิรัตน์</li>
     <li>64114069 - เศรษฐพงษ์ เคียนเขา</li>
 </ul>
-<h2 align="center">หน้า Website การแสดงผล</h1>
+<h2 align="center">หน้า Website การแสดงผล</h2>
 <p align="center">
         <img src="static/images/website.png" width="500">
     </p>
-<h2 align="center">Command IP Flood</h1>
-`sudo hping3 -S --flood -p 1000 <IP Target>`
-
+<h2 align="center">Command IP Flood</h2>
+<p>
+    <code>sudo hping3 -S --flood -p 1000 &lt;IP Target&gt;</code>
+</p>
