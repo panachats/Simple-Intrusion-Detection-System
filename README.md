@@ -1,4 +1,4 @@
-<h1 align="center">การติดตามและตรวจจับการโจมตีรูปแบบ IP Flood </h1>
+<h1 align="center">การติดตามการโจมตีรูปแบบ IP Flood </h1>
 <a href="https://youtube.com/playlist?list=PLIcbB-fs41u-KbvFEhPeSLLYNAmfXF_SN&si=3J5MVap2iLjWcM1s">Link แสดงผลและตัวอย่างการทำงาน: Click Here</a> 
 <h2>สมาชิกในกลุ่ม</h2>
 <ul>
