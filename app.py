@@ -37,11 +37,10 @@ def plot_to_base64(plot):
 def count_hourly_occurrences(data):
     # สร้างเก็บจำนวนรายการที่เกิดขึ้นในแต่ละชั่วโมง
     hourly_counts = {}
-    
-    # วนลูปผ่านทุกข้อมูลในรายการข้อมูล
+    
     for item in data:
         if "@timestamp" in item and "events" in item and item["events"] == "Possible IP Flooding Attack":
-            # ดึงค่า timestamp จากข้อมูล
+       
             timestamp = item["@timestamp"]
             # แปลง timestamp เป็นวัตถุ datetime
             dt_obj = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
@@ -53,9 +52,9 @@ def count_hourly_occurrences(data):
     
     return hourly_counts
 
-# ฟังก์ชันสำหรับเพิ่ม 7 ชั่วโมงให้กับเวลา
-def add_seven_hours(hourly_counts):
-    hours_to_update = list(hourly_counts.keys())  # สร้างรายการคีย์ที่คัดลอกจากพจนานุกรม
+
+def ConvertToThaiTime(hourly_counts):
+    hours_to_update = list(hourly_counts.keys())  # สร้างรายการคีย์
     for hour in hours_to_update:
         dt_obj = datetime.strptime(hour, "%H")
         dt_obj += timedelta(hours=7)
@@ -95,10 +94,10 @@ def generate_bar_chart(hourly_counts):
     ax.tick_params(axis='x', rotation=45)
     plt.tight_layout()
 
-    # แปลงพล็อตเป็น base64
+   
     bar_chart = plot_to_base64(fig)
 
-    plt.close(fig)  # ปิดรูปภาพเพื่อปล่อยทรัพยากร
+    plt.close(fig)
     return bar_chart
 
 @app.route('/')
@@ -106,7 +105,7 @@ def index():
     file_path = 'data_all.json'
     data = load_data(file_path)
     hourly_counts = count_hourly_occurrences(data)
-    hourly_counts_plus_seven = add_seven_hours(hourly_counts)
+    hourly_counts_plus_seven = convertToThaiTime(hourly_counts)
     line_chart = generate_line_chart(hourly_counts_plus_seven)
     bar_chart = generate_bar_chart(hourly_counts_plus_seven)
     return render_template('index.html', line=line_chart, bar=bar_chart)
@@ -117,7 +116,7 @@ def get_json():
     file_path = 'data_all.json'
     data = load_data(file_path)
     hourly_counts = count_hourly_occurrences(data)
-    hourly_counts_plus_seven = add_seven_hours(hourly_counts)
+    hourly_counts_plus_seven = convertToThaiTime(hourly_counts)
     line_chart = generate_line_chart(hourly_counts_plus_seven)
     bar_chart = generate_bar_chart(hourly_counts_plus_seven)
     data = {
